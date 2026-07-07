@@ -1,65 +1,73 @@
 # 🩸 Haemo-Agent Network
 
-### Offline AI Emergency Blood Coordination | Powered by Gemma 4
+### Offline Emergency Blood Coordination AI | Powered by Gemma 4
 
 ![Status](https://img.shields.io/badge/Status-Hackathon_Ready-red)
 ![Offline](https://img.shields.io/badge/Offline-100%25-brightgreen)
-![Voice](https://img.shields.io/badge/Feature-Voice_Enabled-blue)
 ![Gemma](https://img.shields.io/badge/Powered%20By-Gemma%204-red)
 
 ---
 
-## 🚨 The Problem
+## The Problem
 
-In rural Nigeria, hospitals frequently lose internet connectivity. When a trauma patient arrives needing blood, doctors lose access to donor databases. They resort to panicked phone calls—calling 10, 20, even 50 hospitals to find blood. 
+In rural Nigeria, over 70% of health facilities experience frequent internet outages. When a trauma patient arrives and needs blood, doctors lose access to donor databases. They resort to panic phone calls, searching through paper lists, and calling hospitals one by one. Patients bleed out while they wait.
 
-**Patients bleed out while they wait.**
-
----
-
-## 💡 Our Solution
-
-**Haemo-Agent Network** is a fully offline AI coordination system. When a doctor speaks or types an emergency, Gemma 4 extracts the blood type, searches the local network, and returns a complete **Emergency Dispatch Report**—all without internet.
-
-**The doctor gets three instant options:**
-
-1.  **🩸 Hospital Donors** – Eligible donors with phone numbers and distances.
-2.  **📦 On-Site Inventory** – Blood units available in the hospital fridge.
-3.  **🏥 Nearby Hospitals** – Hospitals within 50km that have the blood in stock.
+Existing solutions assume constant connectivity. In reality, emergencies rarely happen when the Wi-Fi is working.
 
 ---
 
-## 🎤 Key Features
+## Our Solution
 
-- **🎙️ Voice Search** – Doctors speak, the AI listens. Hands-free for emergencies.
-- **🧠 Agentic AI** – Gemma 4 extracts blood types, Python executes the search.
-- **🗺️ Offline Math** – Haversine formula calculates distances locally.
-- **📋 Printable Reports** – Clear, actionable dispatch instructions.
-- **📦 Scalable Mock Data** – Pre-loaded hospitals, donors, and inventory for instant demos.
+Haemo-Agent Network is a fully offline AI coordination system that puts the power of regional blood coordination directly into the hands of frontline healthcare workers—no internet required.
 
----
+### How It Works
 
+When a doctor types an emergency like "I need O+ blood for a trauma patient":
 
+1. Gemma 4 extracts the blood type.
+2. Agentic Search executes – Python functions search the local donor database, check 90-day eligibility, and calculate distances using offline Haversine math.
+3. Regional Network Scan – The system checks nearby hospitals within 50km for available blood stock.
+4. Explainable Report – A complete Emergency Dispatch Report is generated with donor names, phone numbers, distances, and reasoning for each recommendation.
 
-## 🛠️ Tech Stack
-
-- **AI Model:** Google Gemma 4 (via Ollama)
-- **Framework:** Python 3.12 + Gradio UI
-- **Logic:** Offline donor search, eligibility checks, Haversine distance math
-- **Speech:** SpeechRecognition + PyAudio
+All of this happens in seconds. All offline. All on a laptop.
 
 ---
 
-## 📋 How to Run (For Judges & Developers)
+## Tech Stack
+
+- AI Model: Google Gemma 4 (via Ollama)
+- Framework: Python 3.12 + Gradio UI
+- Logic: Offline donor search, eligibility checks, Haversine distance math
+- Data: In-memory mock data (resets on restart)
+
+---
+
+## Key Features
+
+| Feature | Description |
+| :--- | :--- |
+| Command Center | One input triggers donors, inventory, and nearby hospitals with live Chain-of-Thought streaming. |
+| Intelligence Dashboard | Ask plain English questions about hospital data. Gemma answers based on local data. |
+| Compatibility Checker | Gemma explains why a donor is or isn't a match, with educational reasoning. |
+| Donor Registration | Add new donors to the network. (Mock data, resets on restart). |
+| Inventory Management | Update hospital blood stock levels. (Mock data, resets on restart). |
+| Hospital Registration | Add new hospitals to the network. (Mock data, resets on restart). |
+
+---
+
+## How to Run
 
 ### Prerequisites
-- Windows, Mac, or Linux
 - Python 3.12 (3.13 is not supported)
-- Ollama installed ([ollama.com](https://ollama.com))
+- Ollama installed from ollama.com
+
+### Installation & Setup
+
+1. Clone this repository
 
 ### Installation & Setup
 
 1.  **Clone the repository**
     ```bash
-    git clone <your-repo-link>
+    git clone (https://github.com/Smart-Techie/Haemo_Agent_Network)
     cd HaemoAgent
