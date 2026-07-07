@@ -1,4 +1,2 @@
 gradio
 ollama
-SpeechRecognition
-pyaudio
