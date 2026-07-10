@@ -384,27 +384,27 @@ def explain_compatibility(patient_blood, donor_blood):
 
     full_response = ""
 
-    step = "*Step 1: Analyzing blood types...*\n"
+    step = "Step 1: Analyzing blood types...\n"
     full_response += step
     yield full_response
     time.sleep(0.2)
 
-    step = f"*Patient: {patient_blood} | Donor: {donor_blood}*\n"
+    step = f"Patient: {patient_blood} | Donor: {donor_blood}\n"
     full_response += step
     yield full_response
     time.sleep(0.2)
 
-    step = "*Step 2: Cross-referencing compatibility rules...*\n"
+    step = "Step 2: Cross-referencing compatibility rules...\n"
     full_response += step
     yield full_response
     time.sleep(0.2)
 
-    step = "*Checking universal donor/recipient rules...*\n"
+    step = "Checking universal donor/recipient rules...\n"
     full_response += step
     yield full_response
     time.sleep(0.2)
 
-    step = "*Step 3: Generating explanation...*\n\n"
+    step = "Step 3: Generating explanation...\n\n"
     full_response += step
     yield full_response
     time.sleep(0.2)
